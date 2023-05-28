@@ -14,21 +14,14 @@ function onFormSubmit(e) {
 //Retrieve the data
 function readFormData() {
   let formData = {};
-  let getM = document.getElementById("genderMale");
-  let getF = document.getElementById("genderFem");
   formData["firstName"] = document.getElementById("firstName").value;
   formData["lastName"] = document.getElementById("lastName").value;
+  formData["gender"] = document.getElementById("gender").value;
   formData["nationality"] = document.getElementById("nationality").value;
   formData["email"] = document.getElementById("email").value;
   formData["phone"] = document.getElementById("phone").value;
   formData["bday"] = document.getElementById("bday").value;
   formData["visType"] = document.getElementById("visType").value;
-
-  if (getM.checked == true) {
-    formData["gender"] = document.getElementById("genderMale").value;
-  } else if (getF.checked == true) {
-    formData["gender"] = document.getElementById("genderFem").value;
-  }
 
   return formData;
 }
@@ -57,8 +50,6 @@ function insertNewRecord(data) {
   cell8.innerHTML = data.visType;
   cell8 = newRow.insertCell(8);
   cell8.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
-
-  resetForm();
 }
 
 //Edit the data
@@ -82,9 +73,6 @@ function updateRecord(formData) {
   selectedRow.cells[5].innerHTML = formData.phone;
   selectedRow.cells[6].innerHTML = formData.bday;
   selectedRow.cells[7].innerHTML = formData.visType;
-
-  resetForm();
-  readFormData();
 }
 
 //Delete the data
