@@ -73,3 +73,18 @@ button {
 button:hover {
   background: #4b99d8;
 }
+
+#gender {
+  height: 40px;
+  width: 300px;
+}
+
+#bday {
+  height: 40px;
+  width: 296px;
+}
+
+#visType {
+  height: 40px;
+  width: 300px;
+}
